@@ -1,0 +1,2781 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko" class="os_unknown none unknown version_0">
+<head>
+<meta charset="utf-8">
+<meta property="og:site_name" content="Daum 영화">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- <title>$tagfilter.filter($stringCutUtil.cutStringRealLength($tmp, $len, "..")) - Daum 영화</title> -->
+<title>Daum 영화</title>
+
+			<meta property="og:title" content="현재 상영중인 영화는?">
+
+		<meta property="og:image" content="http://i1.daumcdn.net/img-contents/movie/2016/ogimage/daum_movie_og2.png">
+				<meta property="og:description" content="Daum영화에서 자세한 내용을 확인하세요!">
+
+	<meta name="plink" content=""/>
+    <meta property="dg:plink" content=""/>
+	<meta property="article:mobile_view_url" content="" /> <!-- mobile -->
+	<meta property="article:pc_view_url" content="" /> <!-- pc -->
+	<meta property="article:mobile_url" content="" /> <!-- mobile -->
+	<meta property="article:pc_url" content="" /> <!-- pc -->
+	<meta name="article:media_name" content="" />
+	<meta property="article:txid" content="" />
+
+	<meta name="article:service_name" content="다음영화" />
+	<meta property="article:published_time" content="" />
+	<meta property="og:regDate" content="" />
+
+	<!-- 서비스홈 URLs -->
+	<meta property="article:mobile_service_home" content="http://m.movie.daum.net/" /> <!-- mobile -->
+	<meta property="article:pc_service_home" content="http://movie.daum.net/" /> <!-- pc -->
+
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+<meta name="format-detection" content="telephone=no">
+<link href="http://i1.daumcdn.net/img-contents/movie/2016/icon/daum_movie_icon_120x120.png" rel="shortcut icon">
+
+
+
+<link href="http://i1.daumcdn.net/img-contents/movie/2016/icon/daum_movie_icon_120x120.png" rel="apple-touch-icon-precomposed" />
+
+
+<!--[if lte IE 8]>
+<script src="http://m1.daumcdn.net/svc/original/U03/cssjs/sizzle/sizzle-1.10.7.min.js"></script>
+<script src="http://m1.daumcdn.net/svc/original/U0301/cssjs/JSON-js/fc535e9cc8/json2.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="http://s1.daumcdn.net/svc/original/U03/cssjs/es-shims/es5-shim-4.0.3.min.js"></script>
+<![endif]-->
+
+<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//common/web2app-standalone-1.0.11.js"></script>
+
+<script type="text/javascript" src="http://m1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//common/m_jigu.js"></script>
+<script src="http://s1.daumcdn.net/svc/original/U03/cssjs/slide/slide-2.0.4.standalone.min.js"></script>
+
+<script type="text/javascript" src="http://m1.daumcdn.net/svc/original/U03/cssjs/suggest/suggest-1.3.16-nodep.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//h.css">
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//jquery.visible.js"></script>
+<script>
+
+	// 반응형 웹의 모바일 최대 가로길이
+	var limitWidthOfMobile = 725;
+
+			var isAndroidMobile = false;
+
+	var resize = {
+		executeWhenWindowResize : function(execFunc) {
+			var curWidth = $(window).width();
+			$(window).resize(function() {
+				var nowWidth = $(window).width();
+				if (curWidth != nowWidth) {
+					execFunc();
+				}
+			});
+		}
+	};
+
+</script>
+
+</head>
+<body>
+
+<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//util/photo_util.js"></script>
+
+<div id="dkIndex">
+	<a href="#dkBody">본문 바로가기</a>
+	<a href="#dkGnb">메뉴 바로가기</a>
+</div>
+
+<script type="text/javascript" src="http://t1.daumcdn.net/cssjs/movie/v2/underscore-min.js"></script>
+
+<div id="dkWrap">
+	<!-- 흰색 변경 GNB 클래스: head_white ,
+	GNB fixed 타입 클래스(상단 띠 배너 height 60px 스크롤된 다음에 클래스 추가) : gnb_fixed ,
+	모바일화면에서 스크롤이 223px 되면 클래스 추가 : mhead_fixed 추가 -->
+
+	<div id="dkHead" class="head_movie avoid_flicker"><!-- 메뉴 오픈시 gnb_on 클래스 부과해주세요. -->
+		<div class="d_head d_head_type #gnb">
+			<h1 class="tit_logo"><a href="/main/new" class="link_logo"><span class="logo_movie">Daum 영화</span></a></h1>
+
+						<h2 class="tit_rel"><a href="/premovie/released" class="link_rel #title">상영・예정영화</a></h2>
+        		        <a href="javascript:;" class="link_menu" onclick="openMenu(); return false;"><span class="ico_popcorn">메뉴열기</span></a>
+	        <div class="head_menu">
+									<a href="javascript:void(0)" class="link_quick" id="share_this_link">공유하기</a>
+					<span class="txt_bar"></span>
+					<a href="javascript:void(0)" class="link_search"><span class="ico_popcorn">검색하기</span>
+					        </a>
+	    </div>
+	</div>
+
+	<!-- 내부 검색 -->
+	<div id="search_layer" class="d_search">
+		<div class="inner_search">
+			<h2 class="screen_out">Daum영화 검색하기</h2>
+			<form action="/search/main" class="inside_sch" name="search_name" role="search">
+				<fieldset>
+				<legend class="screen_out">Daum영화 검색 폼</legend>
+								<input id="search_keyword_text_field" type="search" class="tf_keyword" value="" name="searchText" placeholder="영화, TV, 인물, 영화제, 매거진 검색" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" title="검색어 입력">
+				<!-- 검색어 삭제 버튼 상태에 따라 display:none/block 처리 -->
+				<button type="button" class="btn_del" style=" display:block "><span class="ico_popcorn">검색어 삭제</span></button>
+				<button type="submit" class="btn_search"><span class="ico_popcorn">검색</span></button>
+				<button type="button" id="search_close_btn" class="btn_back">닫기</button>
+									<input name="returnUrl" type="hidden" value="">
+								</fieldset>
+			</form>
+
+			<!-- // 검색창  -->
+			<div class="d_sgt">
+			<!-- 제안 검색어 숨김시 hide 클래스 제공 -->
+				<script type="text/template" id="suggest_list_template">
+					<li>
+						<%
+							var titleName = (title && title.replace(keyword, '<span class="emph_keyword">' + keyword + '</span>')) || '';
+	                        var imgAlt = title || '';
+							var titleEnName = '';
+						%>
+						<a href="<%=href%>" class="link_sgt">
+							<span class="thumb_sgt thumb_noimage bg_noimage">
+								<span class="box_current">현재 선택 검색어</span>
+								<img src="<%=photoConvert(photoUrl || '', 100, 144, 'C')%>" class="img_sgt" alt="<%=imgAlt%>" onload="noImageOnLoad($(this))">
+							</span>
+							<strong class="tit_g">
+								<span class="vertical_m">
+									<span class="tit_name"><%=titleName%></span>
+									<span class="tit_sname"><%=year%></span>
+								</span>
+							</strong>
+						</a>
+					</li>
+				</script>
+				<div class="search_suggest hide" id="suggest_list">
+					<strong id="movie_suggest_title" class="tit_suggest">영화</strong>
+					<ul id="movie_suggest_list" class="list_popular">
+					</ul>
+					<strong id="person_suggest_title" class="tit_suggest">영화인</strong>
+					<ul id="person_suggest_list" class="list_popular">
+					</ul>
+					<strong id="tv_suggest_title" class="tit_suggest">TV</strong>
+					<ul id="tv_suggest_list" class="list_popular">
+					</ul>
+				</div>
+				<!--// 제안 검색어 -->
+				<!-- 인기 검색어 숨김시 hide 클래스 제공 -->
+				<div class="search_popular">
+					<span class="txt_check">전날조회수 기준</span>
+					<div id="search_popular_movie" class="search_section"><!-- on클래스 추가시 활성화 -->
+						<strong class="tit_sgt tit_hotmovie">
+							<a href="#none" class="link_g" id="search_popular_movie_btn">인기 영화</a>
+						</strong>
+
+						<script type="text/template" id="popular-movie-template">
+							<li>
+								<a href="/moviedb/main?movieId=<%=id%>" class="link_sgt">
+									<span class="num_rank"><%=rank%></span>
+									<strong class="tit_g">
+										<span class="vertical_m">
+											<span class="tit_name"><%=title%></span>
+										</span>
+									</strong>
+									<span class="rank_update rank_<%=upDown%> "><!-- 상승 일 경우 rank_up 클래스 추가 // 하락 일 경우 rank_down // 동일할 경우 rank_same -->
+										<span class="ico_popcorn">
+											<% if (upDown == 'up') { %> 상승 <% } %>
+											<% if (upDown == 'down') { %> 하락 <% } %>
+											<% if (upDown == 'same') { %> 변동없음 <% } %>
+										</span>
+										<span class="num_g"><% if (absRankChange > 0) { %> <%=absRankChange%> <%}%></span>
+									</span>
+								</a>
+							</li>
+						</script>
+						<ul id="popular-movie-list" class="list_popular list_hotmovie">
+						</ul>
+					</div>
+					<div id="search_popular_person" class="search_section on"><!-- on클래스 추가시 활성화 -->
+						<strong class="tit_sgt tit_hotperson">
+							<a href="#none" class="link_g" id="search_popular_person_btn">인기 영화인</a>
+						</strong>
+						<script type="text/template" id="popular-person-template">
+							<li>
+								<a href="/person/main?personId=<%=id%>" class="link_sgt">
+									<span class="num_rank"><%=rank%></span>
+									<span class="thumb_sgt thumb_noimage bg_noimage">
+										<span class="box_current">현재 선택 검색어</span>
+										<img src="<%=image%>" class="img_sgt" alt="<%=name%>" onload="noImageOnLoad($(this))">
+									</span>
+									<strong class="tit_g">
+										<span class="vertical_m">
+											<span class="tit_name"><%=nameKo%></span>
+											<span class="tit_sname"><%=nameEn%></span>
+										</span>
+									</strong>
+									<span class="rank_update rank_<%=upDown%>"><!-- 상승 일 경우 rank_up 클래스 추가 // 하락 일 경우 rank_down // 동일할 경우 rank_same -->
+										<span class="ico_popcorn">
+											<% if (upDown == 'up') { %> 상승 <% } %>
+											<% if (upDown == 'down') { %> 하락 <% } %>
+											<% if (upDown == 'same') { %> 변동없음 <% } %>
+										</span>
+										<span class="num_g"><% if (absRankGap > 0) { %> <%=absRankGap%> <%}%></span>
+									</span>
+								</a>
+							</li>
+						</script>
+						<ul id="popular-person-list" class="list_popular">
+						</ul>
+					</div>
+				</div>
+				<!--//  인기 검색어 -->
+			</div>
+		</div>
+	</div>
+
+		<!-- 내부 검색 들어가는 자리 -->
+
+	<!-- Tiara 설정 코드 -->
+	<script type="text/javascript">
+		var _tiq = 'undefined' !== typeof _tiq ? _tiq : [];
+	    var __TiaraObject = __TiaraObject || {};
+	    if ('undefined' === typeof __TiaraObject.startTime) {
+	        __TiaraObject.startTime = new Date();
+	    }
+	    var splitPath = location.pathname.split('/');
+	    _tiq.push(['__setSection', splitPath[1] || 'movie' ]);
+	    _tiq.push(['__setPageName', splitPath[2] || 'default' ]);
+	    _tiq.push(['__setConfig', {enablePageshow: true, enableButton:true, enableHash: true}]);
+	    _tiq.push(['__trackPageview']);
+		_tiq.push(['__clickOn']);
+	</script>
+	<script async src="http://go.daum.net/jsa_minidaum_mobile.daum" charset="utf-8" type="text/javascript"></script>
+	<script>
+		$(document).ready(function() {
+			setSuitMyInfo();
+			resize.executeWhenWindowResize(setSuitMyInfo);
+
+			$("#daumUserLogin").click(function() {
+				location.href = $("#daumMinidaum").find("a").attr("href");
+				movietools.tiara.send(splitPath[1] || "movie", "sidemenu login");
+			});
+
+			setTimeout(function() {
+				$("#daumMinidaum").find("a").addClass("link_gnb");
+				$("#daumMinidaum").find("a").addClass("#loginout")
+			}, 500);
+		});
+
+		function setSuitMyInfo() {
+			var hrefstr = "";
+			if($(window).width() < limitWidthOfMobile) {
+				hrefstr = "https://member.daum.net/m/home.daum";
+			} else {
+				hrefstr = "https://member.daum.net/home.daum";
+			}
+			$("div.detail_profile").find("a.link_profile.link_edit").attr("href", hrefstr);
+		}
+
+		function openMenu() {
+			$("#dkHead").addClass("gnb_on");
+			$('.dimmed').show();
+			movietools.tiara.send(splitPath[1] || "movie", "gnb menu");
+		}
+
+		function closeMenu() {
+			$("#dkHead").removeClass("gnb_on");
+			$('.dimmed').hide();
+			movietools.tiara.send(splitPath[1] || "movie", "sidemenu close");
+		}
+
+			</script>
+
+	<div id="dkGnb" class="menu_side" role="navigation">
+		<div class="inner_gnb #sidemenu">
+			<div class="gnb_logo">
+				<a href="http://www.daum.net/" class="logo_movie link_daum #daumlogo">DAUM</a>
+				<a href="/main/new" class="link_service #movie">영화</a>
+			</div>
+			<strong class="screen_out">로그인 정보</strong>
+
+						<div id="daumUserLogin" class="info_profile info_logout">
+				<a href="#none" class="link_login">로그인하세요  &gt;</a>
+			</div>
+
+			<strong class="screen_out">내 메뉴</strong>
+			<ul class="gnb_comm gnb_mymenu">
+				<li><a href="/profile/moviePoint" class="link_gnb #myrating">내평점</a></li>
+				<li><a href="http://ticket2.movie.daum.net/MyMovie/orderList.aspx" class="link_gnb #mybooking">예매내역</a></li>
+			</ul>
+			<h2 class="screen_out">Moive 메뉴</h2>
+			<ul class="gnb_comm">
+				<li><a href="/main/new" class="link_gnb #home">Home</a></li>
+				<li><a href="https://ticket2.movie.daum.net/Movie/MovieMain.aspx" class="link_gnb #reservation">빠른예매</a></li>
+				<li><a href="http://ticket2.movie.daum.net/Movie/MovieRankList.aspx" class="link_gnb #ranking">예매순위</a></li>
+				<li><a href="/boxoffice/weekly" class="link_gnb #boxoffice">박스오피스</a></li>
+				<li><a href="/premovie/released" class="link_gnb #premovie">상영・예정영화</a></li>
+				<li><a href="/magazine/new" class="link_gnb #magazine">매거진</a></li>
+				<li><a href="/trailer" class="link_gnb #trailer">최신예고편</a></li>
+				<li><a href="/notice/list" class="link_gnb #notice">공지사항</a></li>
+				<li id="daumMinidaum">
+				<!-- <a href="#none" class="link_gnb">로그아웃</a> -->
+				</li>
+			</ul>
+			<div id="siBnrImage" class="bnr_gnb"></div>
+			<a href="javascript:;" class="link_close" onclick="closeMenu(); return false;"><span class="ico_popcorn">메뉴 닫기</span></a>
+		</div>
+	</div>
+</div>
+<hr class="hide">
+
+<div id="dkContent" class="cont_premovie" role="main">
+	<div id="mArticle">
+		<h2 id="dkbody" class="screen_out">상영 예정 영화 본문</h2>
+			<div class="detail_movie detail_premovie">
+				<div class="wrap_tab">
+					<ul class="list_tab #tab" >
+						<li  class="on"><a href="released" class="link_tab #released">현재상영작</a></li>
+						<li ><a href="scheduled" class="link_tab #scheduled">개봉예정작</a></li>
+					</ul>
+				</div>
+				<div class="movie_detail">
+					<h3 class="screen_out">현재 상영작</h3><!-- 텝에 맞게 텍스트 변경 -->
+					<div class="main_detail">
+						<div class="check_reservation">
+							<input type="checkbox" id="checkReservation" class="inp_check">
+							<label for="checkReservation" class="lab_check"><span class="ico_popcorn "></span><!--ico_check 추가시 활성화 -->예매가능한 영화만 보기</label>
+						</div>
+						<div class="movie_join">
+							<ul class="list_boxthumb">
+
+																	<li>
+										<a href="/moviedb/main?movieId=52729" class="link_boxthumb thumb_noimage bg_noimage #list #released @1">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/7d5c46cd06a5526f65bddea9033fcbb65872867b" class="lazy thumb_photo" src="" alt="워크래프트: 전쟁의 서막" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=52729" class="link_g">워크래프트: 전쟁의 서막</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:91.00000381469727%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">9.1</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 21.38% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=52729" class="link_book #reservation @1">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=87427" class="link_boxthumb thumb_noimage bg_noimage #list #released @2">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/314ba9b3c274cbf9418f519148dfe3ae167a3661" class="lazy thumb_photo" src="" alt="정글북" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=87427" class="link_g">정글북</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:88.00000190734863%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">8.8</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 13.7% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=87427" class="link_book #reservation @2">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=102756" class="link_boxthumb thumb_noimage bg_noimage #list #released @3">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/5cafacdff67caaa645f9f463fe9dc13268e2fccb" class="lazy thumb_photo" src="" alt="극장판 유희왕 더 다크 사이드 오브 디멘션즈" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=102756" class="link_g">극장판 유희왕 더 다크 사이드 오브 디멘션즈</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:100%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">10.0</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 12.74% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=102756" class="link_book #reservation @3">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=94486" class="link_boxthumb thumb_noimage bg_noimage #list #released @4">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/2fcacc0c6a963cb72504fd9d017a53650f54e021" class="lazy thumb_photo" src="" alt="컨저링 2" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=94486" class="link_g">컨저링 2</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:80%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">8.0</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 7.89% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=94486" class="link_book #reservation @4">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=96116" class="link_boxthumb thumb_noimage bg_noimage #list #released @5">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/6c3b4c480a11bcfa884e6df49af96c1553d11311" class="lazy thumb_photo" src="" alt="본 투 비 블루" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=96116" class="link_g">본 투 비 블루</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:90%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">9.0</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 1.49% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=96116" class="link_book #reservation @5">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=102538" class="link_boxthumb thumb_noimage bg_noimage #list #released @6">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/5fe5d421c88fc355e3b4e8764bdfeab99a2d59d3" class="lazy thumb_photo" src="" alt="시선 사이" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=102538" class="link_g">시선 사이</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:0%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">0.0</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.27% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=102538" class="link_book #reservation @6">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=100497" class="link_boxthumb thumb_noimage bg_noimage #list #released @7">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/a0e115d880577346fd0861c8e8bdf07d20c0135f" class="lazy thumb_photo" src="" alt="고양이는 불러도 오지 않는다" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=100497" class="link_g">고양이는 불러도 오지 않는다</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:90%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">9.0</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.14% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=100497" class="link_book #reservation @7">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=88418" class="link_boxthumb thumb_noimage bg_noimage #list #released @8">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/7d4035ccf079ea95ea249cedcab9c6dae8acb041" class="lazy thumb_photo" src="" alt="행복까지 30일" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=88418" class="link_g">행복까지 30일</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:59.000000953674316%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">5.9</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.03% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=88418" class="link_book #reservation @8">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=100188" class="link_boxthumb thumb_noimage bg_noimage #list #released @9">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/4e16c5e468d05b433ee03d03f7fc5dc9f7380aa2" class="lazy thumb_photo" src="" alt="그빨로" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=100188" class="link_g">그빨로</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:100%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">10.0</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+
+																																			</dl>
+
+																							<a href="/reservation?movieId=100188" class="link_book #reservation @9">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=103599" class="link_boxthumb thumb_noimage bg_noimage #list #released @10">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/821a1a5ab5bac316948c48fc9745d98f36a9bbbc" class="lazy thumb_photo" src="" alt="리틀 비트 좀비" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=103599" class="link_g">리틀 비트 좀비</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:0%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">0.0</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+
+																																			</dl>
+
+																							<a href="/reservation?movieId=103599" class="link_book #reservation @10">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=101308" class="link_boxthumb thumb_noimage bg_noimage #list #released @11">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/bbe3b3246d5e620e8f0b871d4e3440fc329a933b" class="lazy thumb_photo" src="" alt="플래그 더 문" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=101308" class="link_g">플래그 더 문</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:78.00000190734863%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">7.8</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.02 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.56% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=101308" class="link_book #reservation @11">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=102530" class="link_boxthumb thumb_noimage bg_noimage #list #released @12">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/eca119723136277325d2dd2e2373e290df29f381" class="lazy thumb_photo" src="" alt="바다 탐험대 옥토넛 시즌4: 아슬아슬 구조대작전" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=102530" class="link_g">바다 탐험대 옥토넛 시즌4: 아슬아슬 구조대작전</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:63.00000190734863%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">6.3</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.02 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.41% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=102530" class="link_book #reservation @12">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=4092" class="link_boxthumb thumb_noimage bg_noimage #list #released @13">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/ce947afcbad62bce8db3d3a1055279836c79cc74" class="lazy thumb_photo" src="" alt="피아니스트" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=4092" class="link_g">피아니스트</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:83.99999618530273%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">8.4</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.02 재개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.08% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=4092" class="link_book #reservation @13">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=97107" class="link_boxthumb thumb_noimage bg_noimage #list #released @14">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/9adeeffbe1f56cf4bfac54e22a7affde9aef1197" class="lazy thumb_photo" src="" alt="양치기들" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=97107" class="link_g">양치기들</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:96.00000381469727%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">9.6</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.02 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.05% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=97107" class="link_book #reservation @14">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=87010" class="link_boxthumb thumb_noimage bg_noimage #list #released @15">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/895b79d082f0b7e2e1cf32c8a6a97e2bbfee77b2" class="lazy thumb_photo" src="" alt="연애의 발동: 상해여자,부산남자" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=87010" class="link_g">연애의 발동: 상해여자,부산남자</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:53.00000190734863%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">5.3</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.02 개봉</dd>
+
+																																			</dl>
+
+																							<a href="/reservation?movieId=87010" class="link_book #reservation @15">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=76467" class="link_boxthumb thumb_noimage bg_noimage #list #released @16">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/6a795fedd9e4e2cf33bb28f6fe08a628afe2a83b" class="lazy thumb_photo" src="" alt="아가씨" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=76467" class="link_g">아가씨</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:60%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">6.0</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.01 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 18.87% (<span class="rank_update rank_down"><span class="ico_popcorn">하락</span><span class="num_g">1</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=76467" class="link_book #reservation @16">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=88533" class="link_boxthumb thumb_noimage bg_noimage #list #released @17">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/915389db41e5ea5a6990ff6573f2435680ad249b" class="lazy thumb_photo" src="" alt="미 비포 유" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=88533" class="link_g">미 비포 유</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:88.99999618530273%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">8.9</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.01 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 3.77% (<span class="rank_update rank_same"><span class="ico_popcorn">동일</span><span class="num_g">0</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=88533" class="link_book #reservation @17">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=98730" class="link_boxthumb thumb_noimage bg_noimage #list #released @18">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/f335f10d076879ade6da160dbf2fe1e4a7f11668" class="lazy thumb_photo" src="" alt="무서운 이야기 3: 화성에서 온 소녀" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=98730" class="link_g">무서운 이야기 3: 화성에서 온 소녀</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:45%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">4.5</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.01 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.66% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=98730" class="link_book #reservation @18">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=98188" class="link_boxthumb thumb_noimage bg_noimage #list #released @19">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/8b5e6206ae831290aa16e2db828276a93b37385d" class="lazy thumb_photo" src="" alt="더 보이" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=98188" class="link_g">더 보이</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:76.99999809265137%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">7.7</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.01 개봉</dd>
+
+
+
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.52% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+
+																							<a href="/reservation?movieId=98188" class="link_book #reservation @19">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=103466" class="link_boxthumb thumb_noimage bg_noimage #list #released @20">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/206d111f0fc6d06634ba3d64a67a465226c845b7" class="lazy thumb_photo" src="" alt="카마수트라: 뱀의 여인" onload="noImageOnLoad($(this))">
+										</a>
+
+
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=103466" class="link_g">카마수트라: 뱀의 여인</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:0%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">0.0</em><span class="txt_grade">/10</span>
+											</div>
+
+											<dl class="list_state">
+
+
+
+													<dt>개봉일</dt><dd>2016.06.01 개봉</dd>
+
+																																			</dl>
+
+																							<a href="/reservation?movieId=103466" class="link_book #reservation @20">예매하기<span class="ico_popcorn"></span></a>
+
+										</div>
+									</li>
+
+							</ul>
+
+							<!-- 페이징 -->
+
+
+
+	<div class="paging_popcorn">
+		<div class="inner_paging">
+
+
+
+															<span class="screen_out">현재페이지</span><em class="link_page">1</em>
+																				<a href="released?opt=reservation&page=2" class="link_page">2</a>
+																				<a href="released?opt=reservation&page=3" class="link_page">3</a>
+																				<a href="released?opt=reservation&page=4" class="link_page">4</a>
+
+
+
+		</div>
+	</div>
+
+						</div>
+					</div>
+
+
+<div class="wrap_bnr">
+	<div class="bnr_topside">
+		<div id="EXTENSIBLE_WING_WRAP">
+            <div id="EXTENSIBLE_WING_BANNER_WRAP">
+                <div id="EXTENSIBLE_WING_BANNER" class="RB"></div>
+                <div id="EXTENSIBLE_WING_ICON"></div>
+            </div>
+        </div>
+	</div>
+	<div id="pcBnrImage" class="bnr_bottom"></div>
+</div>
+
+<script type="text/javascript">
+var is_not_show_admin_banner_list = ["/moviedb/main", "/tv/main", "/person/main", "/filmfest/main", "/magazine/new"];
+var this_request_uri = "/premovie/released";
+
+
+
+$(document).ready(function() {
+	if($(window).width() >= limitWidthOfMobile) { // PC 크기에서만 로딩하기
+		var iframeHTML = '<iframe title="배너광고" src="//display.ad.daum.net/imp?slotid=03L13" width="250" height="250" border="0" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="AMS_WING_250exp" name="AMS_WING_250exp" allowtransparency="true"></iframe>';
+		$("#EXTENSIBLE_WING_WRAP").append(iframeHTML);
+	} else {
+		$("#EXTENSIBLE_WING_WRAP").append('<a href="https://story.kakao.com/ch/moviekakao"><img src="http://t1.daumcdn.net/movie/c90e7313496df0d7d4a5bf65d8d5289c9d964cd8" width="250" height="250"></a>');
+	}
+
+	$.ajax({
+		url: "/api/snippet/banner?&"
+	}).done(function(data) {
+		var divBnr = $('#siBnrImage');
+		var today = new Date();
+		// GNB 영역의 사이드 배너 삽입
+		if(divBnr) {
+			var bnr = data.side, startAt = new Date(bnr.bnrStartAt), endAt = new Date(bnr.bnrEndAt);
+			if(today > startAt && today < endAt || today > startAt && !bnr.bnrEndAt) {
+				var a = document.createElement("a"), img = document.createElement("img");
+				a.appendChild(img);
+				a.className = 'link_gnbbnr #banner'; a.href = bnr.pcLanding;
+				img.className = 'thumb_bnr'; img.src = bnr.siBnrImage, img.alt = bnr.bnrImageAlt;
+				divBnr.append(a);
+			}
+		}
+		// 354 배너 페이지에 따라 노출 제어
+		if (is_not_show_admin_banner_list.indexOf(this_request_uri) < 0) {
+			divBnr = $('#pcBnrImage');
+			if(divBnr) {
+				bnr = data.common, startAt = new Date(bnr.bnrStartAt), endAt = new Date(bnr.bnrEndAt);
+				if(today > startAt && today < endAt || today > startAt && !bnr.bnrEndAt) {
+					// PC 배너
+					a = document.createElement("a"), img = document.createElement("img");
+					a.appendChild(img);
+					a.className = 'link_bnr bnr_354 #banner #pc'; a.href = bnr.pcLanding;
+					img.width = 250; img.height = 354; img.src = bnr.pcBnrImage; img.alt = bnr.bnrImageAlt
+					divBnr.append(a);
+
+					// 모바일 하단 배너
+					if(location.pathname == '/main/new') {
+						a = document.createElement("a"), img = document.createElement("img");
+						a.appendChild(img);
+						a.className = 'link_bnr #banner #mobile'; a.style.background = bnr.moBnrBg, a.href = bnr.moLanding;
+						img.width = 320; img.className = 'img_bnr', img.src = bnr.moBnrImage; img.alt = bnr.bnrImageAlt
+						document.getElementById('mBottomBnr').appendChild(a);
+					}
+				}
+			}
+		} else {
+			$("#pcBnrImage").hide();
+		}
+	});
+});
+
+</script>
+				</div>
+			</div>
+		</div>
+
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//lazyload/jquery.lazyload.js"></script>
+
+<script>
+
+	$(document).ready(function() {
+
+		$("img.lazy").lazyload({
+			threshold: function(emt) {return $(emt).parent().innerHeight();}
+		});
+
+		if("reservation" == "reservation") {
+			$("label.lab_check").find("span.ico_popcorn").addClass("ico_check");
+		}
+
+		$("#checkReservation").click(function() {
+			movietools.tiara.send("premovie", "onlybooking");
+
+			var isChecked = $("label.lab_check").find("span.ico_popcorn").hasClass("ico_check");
+			if(isChecked) {
+				goPage("total");
+			} else {
+				goPage("reservation");
+			}
+		});
+
+	});
+
+	function goPage(opt) {
+		location.href = "released?opt=" + opt;
+	}
+
+</script>
+
+
+	</div>
+	<hr class="hide">
+	<div id="share_layer" class="movie_layer share_layer">
+    <div class = "inner_share_layer">
+        <div class="layer_head">
+            <strong class="screen_out">공유하기 레이어</strong>
+        </div>
+        <div class="layer_body">
+            <strong class="screen_out">sns 목록</strong>
+            <ul class="list_share">
+                <li>
+                    <a href="#none" id="shareKakaotalkBtn" class="link_share">
+                        <span class="ico_popcorn ico_kt"></span>카카오톡
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" id="shareKakaoStoryBtn" class="link_share">
+                        <span class="ico_popcorn ico_ks"></span>카카오스토리
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" id="shareFacebookBtn" class="link_share">
+                        <span class="ico_popcorn ico_fb"></span>페이스북
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" id="shareTwitterBtn" class="link_share">
+                        <span class="ico_popcorn ico_tw"></span>트위터
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" id="shareMailBtn" class="link_share">
+                        <span class="ico_popcorn ico_mail"></span>메일
+                    </a>
+                </li>
+            </ul>
+            <div class="area_copy">
+                <label for="tfCopy" class="screen_out">링크 복사</label>
+                <input type="text" id="tfCopy" class="tf_copy" value=""/>
+                <span class="txt_url">URL을 전체선택 한 후 복사하세요</span>
+            </div>
+        </div>
+        <div class="layer_foot">
+            <button type="button" id="shareLayerCloseBtn" class="btn_close ico_popcorn">닫기</button>
+        </div>
+    </div>
+</div>
+<div id="dim_share" class="dimmed_share"></div><!-- 2016-02-18 클래스명 수정 -->	<div id="dkFoot" class="d_foot"  role="contentinfo" >
+		<div class="inner_foot">
+			<a href="/" class="link_logo">
+				<span class="logo_movie">DAUM</span>
+				영화
+			</a>
+			<small class="info_copyright">Copyright © <a href="http://kakaocorp.com/main/" target="_blank" class="link_kakao">Kakao Corp.</a> All rights reserved.</small>
+		</div>
+	</div>
+</div>
+
+<div class="bnr_top bnr_sponsor">
+	<div class="link_bnr" id="SponsorBarWrap">
+		<div class="bar"></div>
+		<div class="tooltip"></div>
+		<div class="minisite"></div>
+	</div>
+</div> <!-- 2016-03-07 임시 피씨 스폰서 배너 -->
+
+<div class="bnr_top bnr_adam">
+	<div id="daumAd"></div>
+</div> <!-- 2016-03-07 임시 모바일 아담 배너 -->
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		var slotid = "";
+		var filler, da;
+		if($(window).width() < limitWidthOfMobile) {
+			slotid = "0Qb72";
+			da = $('#SponsorBarWrap');
+			filler = '<div class="bar"><a href="https://story.kakao.com/ch/moviekakao"> \
+			<img src="http://t1.daumcdn.net/movie/aa5ae7f69c33d34a98b83677981b0a3fcb8a54c5" width="978" height="60" alt="스폰서광고" style="position:absolute"></a></div>';
+			da.html(filler);
+			da.parent().css('background', '#eb5778');
+		} else {
+			slotid = "MIDAS-rhdapzvojof7";
+			da = $('#daumAd');
+			filler = '<a href="https://story.kakao.com/ch/moviekakao" class="link_bnr"> \
+			<img src="http://t1.daumcdn.net/movie/8374b340668cedaff68b8f2ec9c2524ec781489d" class="img_bnr" alt=""></a>';
+			da.html(filler);
+			da.parent().css('background', '#eb5778');
+		}
+
+		new function(d, m, e, k, f) {
+	        var g, l, h, c;
+	        h = d.document;
+	        e = e || "utf-8";
+	        f = f || d;
+	        c = 0;
+	        g = function(b, a) {
+	            null != b.attachEvent ? b.attachEvent("onload", a) : b.addEventListener("load", a, !1)
+	        };
+	        l = function() {
+	            null != k && 2 > c && (c = 2, k.call(f))
+	        };
+	        g(d, function() {
+	            setTimeout(function() {
+	                var b, a;
+	                if (1 > c) return c = 1, b = h.getElementsByTagName("script")[0], a = h.createElement("script"), a.type = "text/javascript", a.async = !0, a.defer = !0, a.src = m, a.charset = e, g(a, l), b.parentNode.insertBefore(a, b)
+	            }, 0)
+	        })
+	    }(window, "http://display.ad.daum.net/imp?slotid=" + slotid, "euc-kr", null, null);
+	});
+
+</script>
+
+
+<div id="notiPopupLayer" class="wrap_layer #notice" style="top:100px"></div>
+
+<script type="text/template" id="image-poplayer-tmpl">
+<div id="<%= id %>" class="movie_layer" style="margin-bottom:70px" data-layer-link="<%= encodeURIComponent(link) %>">
+	<div class="inner_notice_layer inner_notice_image">
+		<div class="layer_head">
+			<strong class="screen_out">공지사항 레이어</strong>
+		</div>
+		<div class="layer_body" tabindex="<%= tabIndex %>">
+			<a href="<%= link %>" class="link_detail #click">
+				<strong class="ir_pm"><%- text %></strong>
+				<img src="<%= image %>" class="img_notice" alt="<%- text %>">
+			</a>
+		</div>
+		<div class="layer_foot">
+			<span class="area_check"><!-- 체크시 'on'클래스 추가 -->
+				<input type="checkbox" id="hiddenCheck<%= id %>" class="inp_check">
+				<label for="hiddenCheck" class="lab_check" tabindex="<%= tabIndex + 1 %>">
+					<span class="ico_popcorn" data-layer-id="<%= id %>"></span>
+					1일간 보지 않기
+				</label>
+			</span>
+			<button type="button" class="btn_close ico_popcorn #close" data-layer-id="<%= id %>" tabindex="<%= tabIndex + 2 %>">닫기</button>
+		</div>
+	</div>
+</div>
+</script>
+
+<script type="text/template" id="text-poplayer-tmpl">
+<div id="<%= id %>" class="movie_layer" style="margin-bottom:70px" data-layer-link="<%= encodeURIComponent(link) %>"><!-- 임시 위치값  -->
+	<div class="inner_notice_layer">
+		<div class="layer_head">
+			<strong class="screen_out">공지사항 레이어</strong>
+		</div>
+		<div class="layer_body" tabindex="<%= tabIndex %>">
+			<p class="txt_infomovie"><%- text %><span class="txt_date"><%- txtDate %></span></p>
+			<a href="<%= link %>" class="link_notice #click">자세히 보기</a>
+		</div>
+		<div class="layer_foot">
+			<span class="area_check"><!-- 체크시 'on'클래스 추가 -->
+				<input type="checkbox" id="hiddenCheck" class="inp_check">
+				<label for="hiddenCheck" class="lab_check" tabindex="<%= tabIndex + 1 %>">
+					<span class="ico_popcorn" data-layer-id="<%= id %>"></span>
+					1일간 보지 않기
+				</label>
+			</span>
+			<button type="button" class="btn_close ico_popcorn #close" data-layer-id="<%= id %>" tabindex="<%= tabIndex + 2 %>">닫기</button>
+		</div>
+	</div>
+</div>
+</script>
+
+<div class="dimmed" style="display:none"></div>
+<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//cookie/jquery.cookie.js"></script>
+<script type="text/javascript">
+var MoviePopLayerController = {
+	queryVal : function(key) {
+		var val = location.search.split(key + "=") || [];
+		return val && val.length > 1 ? val[1].split("&")[0] : "";
+	},
+	isPopupTargetPage : function(targets) {
+		var pages = JSON.parse(targets), section, target;
+		for(var i = 0; i < pages.length; i++) {
+			section = pages[i].section;
+			target = pages[i].target;
+			if(section == 'home' && location.pathname == '/main/new') {
+				return true;
+			} else if(section == 'magazine' && location.pathname == '/magazine/new') {
+				return true;
+			} else if(section == 'movie' && location.pathname == '/moviedb/main' && target == MoviePopLayerController.queryVal('movieId')) {
+				return true;
+			} else if(section == 'tv' && location.pathname == '/tv/main' && target == MoviePopLayerController.queryVal('tvProgramId')) {
+				return true;
+			} else {
+				continue;
+			}
+		}
+		return false;
+	}
+}
+
+
+$.ajax({
+  url: "/api/snippet/layer?&"
+  //cache: false
+
+}).done(function(result) {
+	var image_tmpl = _.template($('#image-poplayer-tmpl').html());
+	var text_tmpl = _.template($('#text-poplayer-tmpl').html());
+
+	if(result.data) {
+		var pops = result.data;
+		if(pops && pops.length && pops.length > 0) {
+			var notiLayer = $('#notiPopupLayer');
+			for(var i = 0; i < pops.length; i++) {
+				pops[i].tabIndex = i * 3 + 1;
+				var pop = pops[i];
+				if(!pop.link)
+					continue;
+				if($.cookie('popcorn_' + encodeURIComponent(pop.link))) {
+					continue;
+				} else {
+					if(MoviePopLayerController.isPopupTargetPage(pop.popPages)) {
+						pop.id = 'popLayerId' + i;
+						var today = new Date(), startAt = new Date(pop.startAt), endAt = new Date(pop.endAt);
+						//if(today > endAt || today < startAt) continue;
+						//if(today > startAt && today < endAt || today > startAt && !pop.endAt) {
+						if(today > startAt && today < endAt) {
+							if(pop.image && pop.image != '')
+								notiLayer.append(image_tmpl(pops[i]));
+							else if(pop.text && pop.text != '')
+								notiLayer.append(text_tmpl(pops[i]));
+							else
+								;
+						}
+					}
+				}
+			}
+			if(notiLayer.children().length > 0) {
+				$('.dimmed').css('display', 'block');
+				if(location.href.indexOf('#dkWrap') < 0) location.href = location.href + '#dkWrap';
+				else location.href = location.href;
+			}
+			/* 마크업 변경 가능성 있음으로 주석 처리
+			notiLayer.find('.btn_close').on('click', function(ev) {
+				$('#'+ev.target.getAttribute('data-layer-id')).remove();
+				if(notiLayer.children().length < 1)
+					$('.dimmed').css('display', 'none');
+			});
+			*/
+			notiLayer.find('.btn_close.ico_popcorn').on('click', function(ev) {
+				$('#'+ev.target.getAttribute('data-layer-id')).remove();
+				if(notiLayer.children().length < 1)
+					$('.dimmed').css('display', 'none');
+				//movietools.tiara.send('movie', 'home layer img', {cno: '1-1', img:'http://img1.daumcdn.net/thumb/C186x268/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F697db6e5c1a3fa165d807c381498c80fcca0ab66'});
+				//movietools.tiara.sendEventLog(['button', 'newsbox', 'prev_next', 'prev']);
+
+			});
+			notiLayer.find('.lab_check').on('click', function(ev) {
+				var $pop = $('#'+ev.target.getAttribute('data-layer-id'));
+				$pop.remove();
+				if(notiLayer.children().length < 1)
+					$('.dimmed').css('display', 'none');
+				$.cookie('popcorn_' + $pop.attr('data-layer-link'), true, { expires: 1, path: '/', domain: 'movie.daum.net' });
+			});
+
+		}
+	}
+});
+</script>
+
+
+
+<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//rx.all.compat.js"></script>
+
+<script type="text/javascript">
+    var deviceMode = 'unknown';
+</script>
+<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//footer/scroll_common.js"></script>
+	<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//footer/search_common_for_footer.js"></script>
+	<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//common/socialshare_common.js"></script>
+<script type="text/javascript">
+var MOVIE_FOOT_VIEWABLE = {
+	sendFootViewEventLog: function() {
+		if($('#dkFoot').visible(true, false, 'vertical')) {
+			var paths = location.pathname.split('/');
+	    	_tiq.push(['__trackEvent', 'foot', paths[1], paths[2]]);
+	    	$(window).unbind('scroll', MOVIE_FOOT_VIEWABLE.sendFootViewEventLog);
+	    }
+    }
+}
+$(window).bind('scroll', MOVIE_FOOT_VIEWABLE.sendFootViewEventLog);
+
+	$(document).ready(function() {
+		SCROLL_COMMON.readyScroll();
+		            $(".link_search").bind("click", function() {
+				var browser = window.ua_result.browser;
+				if (browser.name == 'msie' && browser.version.major <= 8) {
+                    alert('IE11에 최적화 되어있으며, IE8 이하 버전에서는 일부 기능이 제한될 수 있습니다.');
+				} else {
+                    onClickSearch();
+				}
+			});
+			$("#search_close_btn").bind("click", function() {
+				if ($("#dkHead").hasClass("search_on")) {
+					$("#dkHead").removeClass("search_on")
+				}
+				if ($("#dkHead").hasClass("sgt_on")) {
+					$("#dkHead").removeClass("sgt_on")
+				}
+				$("#dkWrap").css("height", "auto");
+				$("#search_keyword_text_field").val("");
+				jQuery(window).off('resize', setTimeoutFixedHeight);
+				SCROLL_COMMON.applyScrollCommon();
+			});
+				readySearchForFooter();
+
+		var snsImgUrl = null;
+		var snsContentTitle = null;
+		var snsButtonText = null;
+									snsButtonText = '현재 상영 영화';
+		        var socialShareHelper = new SocialShareHelper(window.ua_result, snsImgUrl, snsContentTitle, snsButtonText);
+		socialShareHelper.setSocialLayerPosition();
+        jQuery(window).on('resize', socialShareHelper.setSocialLayerPosition);
+		socialShareHelper.bindEvents();
+	});
+	    	$("#search_layer form input[name='returnUrl']").val(location.href);
+
+	</script>
+<script async src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//common/tiara.js" charset="utf-8" type="text/javascript"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko" class="os_unknown none unknown version_0">
+<head>
+<meta charset="utf-8">
+<meta property="og:site_name" content="Daum 영화">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- <title>$tagfilter.filter($stringCutUtil.cutStringRealLength($tmp, $len, "..")) - Daum 영화</title> -->
+<title>Daum 영화</title>
+
+			<meta property="og:title" content="현재 상영중인 영화는?">
+				
+		<meta property="og:image" content="http://i1.daumcdn.net/img-contents/movie/2016/ogimage/daum_movie_og2.png">
+				<meta property="og:description" content="Daum영화에서 자세한 내용을 확인하세요!">
+			
+	<meta name="plink" content=""/>
+    <meta property="dg:plink" content=""/>
+	<meta property="article:mobile_view_url" content="" /> <!-- mobile -->
+	<meta property="article:pc_view_url" content="" /> <!-- pc -->
+	<meta property="article:mobile_url" content="" /> <!-- mobile -->
+	<meta property="article:pc_url" content="" /> <!-- pc -->
+	<meta name="article:media_name" content="" />
+	<meta property="article:txid" content="" />
+	
+	<meta name="article:service_name" content="다음영화" />
+	<meta property="article:published_time" content="" />
+	<meta property="og:regDate" content="" />
+
+	<!-- 서비스홈 URLs -->
+	<meta property="article:mobile_service_home" content="http://m.movie.daum.net/" /> <!-- mobile -->
+	<meta property="article:pc_service_home" content="http://movie.daum.net/" /> <!-- pc -->
+
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+
+<meta name="format-detection" content="telephone=no"> 
+<link href="http://i1.daumcdn.net/img-contents/movie/2016/icon/daum_movie_icon_120x120.png" rel="shortcut icon">
+
+
+
+<link href="http://i1.daumcdn.net/img-contents/movie/2016/icon/daum_movie_icon_120x120.png" rel="apple-touch-icon-precomposed" /> 
+
+
+<!--[if lte IE 8]>
+<script src="http://m1.daumcdn.net/svc/original/U03/cssjs/sizzle/sizzle-1.10.7.min.js"></script>
+<script src="http://m1.daumcdn.net/svc/original/U0301/cssjs/JSON-js/fc535e9cc8/json2.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+<script src="http://s1.daumcdn.net/svc/original/U03/cssjs/es-shims/es5-shim-4.0.3.min.js"></script>
+<![endif]-->
+
+<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//common/web2app-standalone-1.0.11.js"></script>
+
+<script type="text/javascript" src="http://m1.daumcdn.net/svc/original/U03/cssjs/jquery/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//common/m_jigu.js"></script> 
+<script src="http://s1.daumcdn.net/svc/original/U03/cssjs/slide/slide-2.0.4.standalone.min.js"></script>
+
+<script type="text/javascript" src="http://m1.daumcdn.net/svc/original/U03/cssjs/suggest/suggest-1.3.16-nodep.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//h.css">
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//jquery.visible.js"></script>
+<script>
+
+	// 반응형 웹의 모바일 최대 가로길이
+	var limitWidthOfMobile = 725;
+	
+			var isAndroidMobile = false;
+		
+	var resize = {
+		executeWhenWindowResize : function(execFunc) {
+			var curWidth = $(window).width();
+			$(window).resize(function() {
+				var nowWidth = $(window).width();
+				if (curWidth != nowWidth) {
+					execFunc();
+				}
+			});
+		}
+	};
+	
+</script>
+
+</head>
+<body>
+
+<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//util/photo_util.js"></script>
+
+<div id="dkIndex">
+	<a href="#dkBody">본문 바로가기</a>
+	<a href="#dkGnb">메뉴 바로가기</a>
+</div>
+
+<script type="text/javascript" src="http://t1.daumcdn.net/cssjs/movie/v2/underscore-min.js"></script>
+
+<div id="dkWrap">
+	<!-- 흰색 변경 GNB 클래스: head_white ,
+	GNB fixed 타입 클래스(상단 띠 배너 height 60px 스크롤된 다음에 클래스 추가) : gnb_fixed , 
+	모바일화면에서 스크롤이 223px 되면 클래스 추가 : mhead_fixed 추가 -->
+	
+	<div id="dkHead" class="head_movie avoid_flicker"><!-- 메뉴 오픈시 gnb_on 클래스 부과해주세요. -->
+		<div class="d_head d_head_type #gnb">
+			<h1 class="tit_logo"><a href="/main/new" class="link_logo"><span class="logo_movie">Daum 영화</span></a></h1>
+			
+						<h2 class="tit_rel"><a href="/premovie/released" class="link_rel #title">상영・예정영화</a></h2>
+        		        <a href="javascript:;" class="link_menu" onclick="openMenu(); return false;"><span class="ico_popcorn">메뉴열기</span></a>
+	        <div class="head_menu">
+									<a href="javascript:void(0)" class="link_quick" id="share_this_link">공유하기</a>
+					<span class="txt_bar"></span>
+					<a href="javascript:void(0)" class="link_search"><span class="ico_popcorn">검색하기</span>
+					        </a>
+	    </div>
+	</div>
+
+	<!-- 내부 검색 -->
+	<div id="search_layer" class="d_search">
+		<div class="inner_search">
+			<h2 class="screen_out">Daum영화 검색하기</h2>
+			<form action="/search/main" class="inside_sch" name="search_name" role="search">
+				<fieldset>
+				<legend class="screen_out">Daum영화 검색 폼</legend>
+								<input id="search_keyword_text_field" type="search" class="tf_keyword" value="" name="searchText" placeholder="영화, TV, 인물, 영화제, 매거진 검색" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" title="검색어 입력">
+				<!-- 검색어 삭제 버튼 상태에 따라 display:none/block 처리 -->
+				<button type="button" class="btn_del" style=" display:block "><span class="ico_popcorn">검색어 삭제</span></button>
+				<button type="submit" class="btn_search"><span class="ico_popcorn">검색</span></button>
+				<button type="button" id="search_close_btn" class="btn_back">닫기</button>
+									<input name="returnUrl" type="hidden" value="">
+								</fieldset>
+			</form>
+			
+			<!-- // 검색창  -->
+			<div class="d_sgt">
+			<!-- 제안 검색어 숨김시 hide 클래스 제공 -->
+				<script type="text/template" id="suggest_list_template">
+					<li>
+						<%
+							var titleName = (title && title.replace(keyword, '<span class="emph_keyword">' + keyword + '</span>')) || '';
+	                        var imgAlt = title || '';
+							var titleEnName = '';
+						%>
+						<a href="<%=href%>" class="link_sgt">
+							<span class="thumb_sgt thumb_noimage bg_noimage">
+								<span class="box_current">현재 선택 검색어</span>
+								<img src="<%=photoConvert(photoUrl || '', 100, 144, 'C')%>" class="img_sgt" alt="<%=imgAlt%>" onload="noImageOnLoad($(this))">
+							</span>
+							<strong class="tit_g">
+								<span class="vertical_m">
+									<span class="tit_name"><%=titleName%></span>
+									<span class="tit_sname"><%=year%></span>
+								</span>
+							</strong>
+						</a>
+					</li>
+				</script>
+				<div class="search_suggest hide" id="suggest_list">
+					<strong id="movie_suggest_title" class="tit_suggest">영화</strong>
+					<ul id="movie_suggest_list" class="list_popular">
+					</ul>
+					<strong id="person_suggest_title" class="tit_suggest">영화인</strong>
+					<ul id="person_suggest_list" class="list_popular">
+					</ul>
+					<strong id="tv_suggest_title" class="tit_suggest">TV</strong>
+					<ul id="tv_suggest_list" class="list_popular">
+					</ul>
+				</div>
+				<!--// 제안 검색어 -->
+				<!-- 인기 검색어 숨김시 hide 클래스 제공 -->
+				<div class="search_popular">
+					<span class="txt_check">전날조회수 기준</span>
+					<div id="search_popular_movie" class="search_section"><!-- on클래스 추가시 활성화 -->
+						<strong class="tit_sgt tit_hotmovie">
+							<a href="#none" class="link_g" id="search_popular_movie_btn">인기 영화</a>
+						</strong>
+
+						<script type="text/template" id="popular-movie-template">
+							<li>
+								<a href="/moviedb/main?movieId=<%=id%>" class="link_sgt">
+									<span class="num_rank"><%=rank%></span>
+									<strong class="tit_g">
+										<span class="vertical_m">
+											<span class="tit_name"><%=title%></span>
+										</span>
+									</strong>
+									<span class="rank_update rank_<%=upDown%> "><!-- 상승 일 경우 rank_up 클래스 추가 // 하락 일 경우 rank_down // 동일할 경우 rank_same -->
+										<span class="ico_popcorn">
+											<% if (upDown == 'up') { %> 상승 <% } %>
+											<% if (upDown == 'down') { %> 하락 <% } %>
+											<% if (upDown == 'same') { %> 변동없음 <% } %>
+										</span>
+										<span class="num_g"><% if (absRankChange > 0) { %> <%=absRankChange%> <%}%></span>
+									</span>
+								</a>
+							</li>
+						</script>
+						<ul id="popular-movie-list" class="list_popular list_hotmovie">
+						</ul>
+					</div>
+					<div id="search_popular_person" class="search_section on"><!-- on클래스 추가시 활성화 -->
+						<strong class="tit_sgt tit_hotperson">
+							<a href="#none" class="link_g" id="search_popular_person_btn">인기 영화인</a>
+						</strong>
+						<script type="text/template" id="popular-person-template">
+							<li>
+								<a href="/person/main?personId=<%=id%>" class="link_sgt">
+									<span class="num_rank"><%=rank%></span>
+									<span class="thumb_sgt thumb_noimage bg_noimage">
+										<span class="box_current">현재 선택 검색어</span>
+										<img src="<%=image%>" class="img_sgt" alt="<%=name%>" onload="noImageOnLoad($(this))">
+									</span>
+									<strong class="tit_g">
+										<span class="vertical_m">
+											<span class="tit_name"><%=nameKo%></span>
+											<span class="tit_sname"><%=nameEn%></span>
+										</span>
+									</strong>
+									<span class="rank_update rank_<%=upDown%>"><!-- 상승 일 경우 rank_up 클래스 추가 // 하락 일 경우 rank_down // 동일할 경우 rank_same -->
+										<span class="ico_popcorn">
+											<% if (upDown == 'up') { %> 상승 <% } %>
+											<% if (upDown == 'down') { %> 하락 <% } %>
+											<% if (upDown == 'same') { %> 변동없음 <% } %>
+										</span>
+										<span class="num_g"><% if (absRankGap > 0) { %> <%=absRankGap%> <%}%></span>
+									</span>
+								</a>
+							</li>
+						</script>
+						<ul id="popular-person-list" class="list_popular">
+						</ul>
+					</div>
+				</div>
+				<!--//  인기 검색어 -->
+			</div>
+		</div>
+	</div>
+
+		<!-- 내부 검색 들어가는 자리 -->
+	
+	<!-- Tiara 설정 코드 -->
+	<script type="text/javascript">
+		var _tiq = 'undefined' !== typeof _tiq ? _tiq : [];
+	    var __TiaraObject = __TiaraObject || {};
+	    if ('undefined' === typeof __TiaraObject.startTime) {
+	        __TiaraObject.startTime = new Date();
+	    }
+	    var splitPath = location.pathname.split('/');
+	    _tiq.push(['__setSection', splitPath[1] || 'movie' ]);
+	    _tiq.push(['__setPageName', splitPath[2] || 'default' ]);
+	    _tiq.push(['__setConfig', {enablePageshow: true, enableButton:true, enableHash: true}]);
+	    _tiq.push(['__trackPageview']);
+		_tiq.push(['__clickOn']);
+	</script>
+	<script async src="http://go.daum.net/jsa_minidaum_mobile.daum" charset="utf-8" type="text/javascript"></script>
+	<script>
+		$(document).ready(function() {
+			setSuitMyInfo();
+			resize.executeWhenWindowResize(setSuitMyInfo);
+			
+			$("#daumUserLogin").click(function() {
+				location.href = $("#daumMinidaum").find("a").attr("href");
+				movietools.tiara.send(splitPath[1] || "movie", "sidemenu login");
+			});
+			
+			setTimeout(function() {
+				$("#daumMinidaum").find("a").addClass("link_gnb");
+				$("#daumMinidaum").find("a").addClass("#loginout")
+			}, 500);
+		});
+		
+		function setSuitMyInfo() {
+			var hrefstr = "";
+			if($(window).width() < limitWidthOfMobile) {
+				hrefstr = "https://member.daum.net/m/home.daum";
+			} else {
+				hrefstr = "https://member.daum.net/home.daum";
+			}
+			$("div.detail_profile").find("a.link_profile.link_edit").attr("href", hrefstr);
+		}
+		
+		function openMenu() {
+			$("#dkHead").addClass("gnb_on");
+			$('.dimmed').show();
+			movietools.tiara.send(splitPath[1] || "movie", "gnb menu");
+		}
+		
+		function closeMenu() {
+			$("#dkHead").removeClass("gnb_on");
+			$('.dimmed').hide();
+			movietools.tiara.send(splitPath[1] || "movie", "sidemenu close");
+		}
+		
+			</script>
+	
+	<div id="dkGnb" class="menu_side" role="navigation"> 
+		<div class="inner_gnb #sidemenu">
+			<div class="gnb_logo">
+				<a href="http://www.daum.net/" class="logo_movie link_daum #daumlogo">DAUM</a>
+				<a href="/main/new" class="link_service #movie">영화</a>
+			</div>
+			<strong class="screen_out">로그인 정보</strong>
+				
+						<div id="daumUserLogin" class="info_profile info_logout">
+				<a href="#none" class="link_login">로그인하세요  &gt;</a>
+			</div>
+							
+			<strong class="screen_out">내 메뉴</strong>
+			<ul class="gnb_comm gnb_mymenu">
+				<li><a href="/profile/moviePoint" class="link_gnb #myrating">내평점</a></li>
+				<li><a href="http://ticket2.movie.daum.net/MyMovie/orderList.aspx" class="link_gnb #mybooking">예매내역</a></li>
+			</ul>
+			<h2 class="screen_out">Moive 메뉴</h2>
+			<ul class="gnb_comm">
+				<li><a href="/main/new" class="link_gnb #home">Home</a></li>
+				<li><a href="https://ticket2.movie.daum.net/Movie/MovieMain.aspx" class="link_gnb #reservation">빠른예매</a></li>
+				<li><a href="http://ticket2.movie.daum.net/Movie/MovieRankList.aspx" class="link_gnb #ranking">예매순위</a></li>
+				<li><a href="/boxoffice/weekly" class="link_gnb #boxoffice">박스오피스</a></li>
+				<li><a href="/premovie/released" class="link_gnb #premovie">상영・예정영화</a></li>
+				<li><a href="/magazine/new" class="link_gnb #magazine">매거진</a></li>
+				<li><a href="/trailer" class="link_gnb #trailer">최신예고편</a></li>
+				<li><a href="/notice/list" class="link_gnb #notice">공지사항</a></li>
+				<li id="daumMinidaum">
+				<!-- <a href="#none" class="link_gnb">로그아웃</a> -->
+				</li>
+			</ul>
+			<div id="siBnrImage" class="bnr_gnb"></div>
+			<a href="javascript:;" class="link_close" onclick="closeMenu(); return false;"><span class="ico_popcorn">메뉴 닫기</span></a>
+		</div>
+	</div>
+</div>
+<hr class="hide">
+
+<div id="dkContent" class="cont_premovie" role="main">
+	<div id="mArticle">
+		<h2 id="dkbody" class="screen_out">상영 예정 영화 본문</h2>
+			<div class="detail_movie detail_premovie">
+				<div class="wrap_tab">
+					<ul class="list_tab #tab" >
+						<li  class="on"><a href="released" class="link_tab #released">현재상영작</a></li>
+						<li ><a href="scheduled" class="link_tab #scheduled">개봉예정작</a></li>
+					</ul>
+				</div>
+				<div class="movie_detail">
+					<h3 class="screen_out">현재 상영작</h3><!-- 텝에 맞게 텍스트 변경 -->
+					<div class="main_detail">
+						<div class="check_reservation">
+							<input type="checkbox" id="checkReservation" class="inp_check">
+							<label for="checkReservation" class="lab_check"><span class="ico_popcorn "></span><!--ico_check 추가시 활성화 -->예매가능한 영화만 보기</label>
+						</div>
+						<div class="movie_join">
+							<ul class="list_boxthumb">
+								
+																	<li>
+										<a href="/moviedb/main?movieId=52729" class="link_boxthumb thumb_noimage bg_noimage #list #released @1">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/7d5c46cd06a5526f65bddea9033fcbb65872867b" class="lazy thumb_photo" src="" alt="워크래프트: 전쟁의 서막" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=52729" class="link_g">워크래프트: 전쟁의 서막</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:90%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">9.0</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 21.38% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=52729" class="link_book #reservation @1">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=87427" class="link_boxthumb thumb_noimage bg_noimage #list #released @2">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/314ba9b3c274cbf9418f519148dfe3ae167a3661" class="lazy thumb_photo" src="" alt="정글북" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=87427" class="link_g">정글북</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:88.00000190734863%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">8.8</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 13.7% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=87427" class="link_book #reservation @2">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=102756" class="link_boxthumb thumb_noimage bg_noimage #list #released @3">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/5cafacdff67caaa645f9f463fe9dc13268e2fccb" class="lazy thumb_photo" src="" alt="극장판 유희왕 더 다크 사이드 오브 디멘션즈" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=102756" class="link_g">극장판 유희왕 더 다크 사이드 오브 디멘션즈</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:100%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">10.0</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 12.74% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=102756" class="link_book #reservation @3">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=94486" class="link_boxthumb thumb_noimage bg_noimage #list #released @4">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/2fcacc0c6a963cb72504fd9d017a53650f54e021" class="lazy thumb_photo" src="" alt="컨저링 2" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=94486" class="link_g">컨저링 2</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:80%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">8.0</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 7.89% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=94486" class="link_book #reservation @4">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=96116" class="link_boxthumb thumb_noimage bg_noimage #list #released @5">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/6c3b4c480a11bcfa884e6df49af96c1553d11311" class="lazy thumb_photo" src="" alt="본 투 비 블루" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=96116" class="link_g">본 투 비 블루</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:90%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">9.0</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 1.49% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=96116" class="link_book #reservation @5">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=102538" class="link_boxthumb thumb_noimage bg_noimage #list #released @6">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/5fe5d421c88fc355e3b4e8764bdfeab99a2d59d3" class="lazy thumb_photo" src="" alt="시선 사이" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=102538" class="link_g">시선 사이</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:0%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">0.0</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.27% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=102538" class="link_book #reservation @6">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=100497" class="link_boxthumb thumb_noimage bg_noimage #list #released @7">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/a0e115d880577346fd0861c8e8bdf07d20c0135f" class="lazy thumb_photo" src="" alt="고양이는 불러도 오지 않는다" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=100497" class="link_g">고양이는 불러도 오지 않는다</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:90%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">9.0</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.14% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=100497" class="link_book #reservation @7">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=88418" class="link_boxthumb thumb_noimage bg_noimage #list #released @8">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/7d4035ccf079ea95ea249cedcab9c6dae8acb041" class="lazy thumb_photo" src="" alt="행복까지 30일" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=88418" class="link_g">행복까지 30일</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:59.000000953674316%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">5.9</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.03% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=88418" class="link_book #reservation @8">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=100188" class="link_boxthumb thumb_noimage bg_noimage #list #released @9">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/4e16c5e468d05b433ee03d03f7fc5dc9f7380aa2" class="lazy thumb_photo" src="" alt="그빨로" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=100188" class="link_g">그빨로</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:100%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">10.0</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+																								
+																																			</dl>
+											
+																							<a href="/reservation?movieId=100188" class="link_book #reservation @9">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=103599" class="link_boxthumb thumb_noimage bg_noimage #list #released @10">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/821a1a5ab5bac316948c48fc9745d98f36a9bbbc" class="lazy thumb_photo" src="" alt="리틀 비트 좀비" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=103599" class="link_g">리틀 비트 좀비</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:0%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">0.0</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.09 개봉</dd>
+																								
+																																			</dl>
+											
+																							<a href="/reservation?movieId=103599" class="link_book #reservation @10">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=101308" class="link_boxthumb thumb_noimage bg_noimage #list #released @11">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/bbe3b3246d5e620e8f0b871d4e3440fc329a933b" class="lazy thumb_photo" src="" alt="플래그 더 문" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=101308" class="link_g">플래그 더 문</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:78.00000190734863%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">7.8</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.02 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.56% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=101308" class="link_book #reservation @11">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=102530" class="link_boxthumb thumb_noimage bg_noimage #list #released @12">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/eca119723136277325d2dd2e2373e290df29f381" class="lazy thumb_photo" src="" alt="바다 탐험대 옥토넛 시즌4: 아슬아슬 구조대작전" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=102530" class="link_g">바다 탐험대 옥토넛 시즌4: 아슬아슬 구조대작전</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:63.00000190734863%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">6.3</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.02 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.41% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=102530" class="link_book #reservation @12">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=4092" class="link_boxthumb thumb_noimage bg_noimage #list #released @13">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/ce947afcbad62bce8db3d3a1055279836c79cc74" class="lazy thumb_photo" src="" alt="피아니스트" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=4092" class="link_g">피아니스트</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:83.99999618530273%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">8.4</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																																				
+													<dt>개봉일</dt><dd>2016.06.02 재개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.08% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=4092" class="link_book #reservation @13">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=97107" class="link_boxthumb thumb_noimage bg_noimage #list #released @14">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/9adeeffbe1f56cf4bfac54e22a7affde9aef1197" class="lazy thumb_photo" src="" alt="양치기들" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=97107" class="link_g">양치기들</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:96.00000381469727%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">9.6</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.02 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.05% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=97107" class="link_book #reservation @14">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=87010" class="link_boxthumb thumb_noimage bg_noimage #list #released @15">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/895b79d082f0b7e2e1cf32c8a6a97e2bbfee77b2" class="lazy thumb_photo" src="" alt="연애의 발동: 상해여자,부산남자" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=87010" class="link_g">연애의 발동: 상해여자,부산남자</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:53.00000190734863%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">5.3</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.02 개봉</dd>
+																								
+																																			</dl>
+											
+																							<a href="/reservation?movieId=87010" class="link_book #reservation @15">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=76467" class="link_boxthumb thumb_noimage bg_noimage #list #released @16">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/6a795fedd9e4e2cf33bb28f6fe08a628afe2a83b" class="lazy thumb_photo" src="" alt="아가씨" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=76467" class="link_g">아가씨</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:60%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">6.0</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.01 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 18.87% (<span class="rank_update rank_down"><span class="ico_popcorn">하락</span><span class="num_g">1</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=76467" class="link_book #reservation @16">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=88533" class="link_boxthumb thumb_noimage bg_noimage #list #released @17">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/915389db41e5ea5a6990ff6573f2435680ad249b" class="lazy thumb_photo" src="" alt="미 비포 유" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=88533" class="link_g">미 비포 유</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:88.99999618530273%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">8.9</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.01 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 3.77% (<span class="rank_update rank_same"><span class="ico_popcorn">동일</span><span class="num_g">0</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=88533" class="link_book #reservation @17">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=98730" class="link_boxthumb thumb_noimage bg_noimage #list #released @18">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/f335f10d076879ade6da160dbf2fe1e4a7f11668" class="lazy thumb_photo" src="" alt="무서운 이야기 3: 화성에서 온 소녀" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=98730" class="link_g">무서운 이야기 3: 화성에서 온 소녀</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:45%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">4.5</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.01 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.66% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=98730" class="link_book #reservation @18">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=98188" class="link_boxthumb thumb_noimage bg_noimage #list #released @19">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/8b5e6206ae831290aa16e2db828276a93b37385d" class="lazy thumb_photo" src="" alt="더 보이" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=98188" class="link_g">더 보이</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:76.99999809265137%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">7.7</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.01 개봉</dd>
+																								
+																																					
+																																																				
+													<dt>현재 예매율</dt>
+													<dd>예매율 0.52% (<span class="rank_update rank_new"><span class="ico_popcorn">new</span><span class="num_g">NEW</span></span>)</dd>
+																							</dl>
+											
+																							<a href="/reservation?movieId=98188" class="link_book #reservation @19">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																	<li>
+										<a href="/moviedb/main?movieId=103466" class="link_boxthumb thumb_noimage bg_noimage #list #released @20">
+											<img data-original="http://img1.daumcdn.net/thumb/R338x491/?fname=http://t1.daumcdn.net/movie/206d111f0fc6d06634ba3d64a67a465226c845b7" class="lazy thumb_photo" src="" alt="카마수트라: 뱀의 여인" onload="noImageOnLoad($(this))">
+										</a>
+										
+																				
+										<div class="desc_boxthumb">
+											<strong class="tit_join"><a href="/moviedb/main?movieId=103466" class="link_g">카마수트라: 뱀의 여인</a></strong>
+											<div class="raking_grade">
+												<span class="bg_star star_grade"><span class="bg_star inner_star" style="width:0%">평점</span></span> <!-- 116px이 100%, % 계산에서 width값에 적용-->
+												<em class="emph_grade">0.0</em><span class="txt_grade">/10</span>
+											</div>
+											
+											<dl class="list_state">
+											
+																																																			
+																																							
+													<dt>개봉일</dt><dd>2016.06.01 개봉</dd>
+																								
+																																			</dl>
+											
+																							<a href="/reservation?movieId=103466" class="link_book #reservation @20">예매하기<span class="ico_popcorn"></span></a>
+																						
+										</div>
+									</li>
+																
+							</ul>
+							
+							<!-- 페이징 -->
+								
+			
+		
+	<div class="paging_popcorn">
+		<div class="inner_paging">
+		
+						
+																		
+															<span class="screen_out">현재페이지</span><em class="link_page">1</em>
+																				<a href="released?opt=reservation&page=2" class="link_page">2</a>
+																				<a href="released?opt=reservation&page=3" class="link_page">3</a>
+																				<a href="released?opt=reservation&page=4" class="link_page">4</a>
+														
+						    				    			    	
+						
+		</div>
+	</div>
+							
+						</div>
+					</div>
+					
+					
+<div class="wrap_bnr">
+	<div class="bnr_topside">
+		<div id="EXTENSIBLE_WING_WRAP">            
+            <div id="EXTENSIBLE_WING_BANNER_WRAP">
+                <div id="EXTENSIBLE_WING_BANNER" class="RB"></div>
+                <div id="EXTENSIBLE_WING_ICON"></div>
+            </div>
+        </div>
+	</div>
+	<div id="pcBnrImage" class="bnr_bottom"></div>
+</div>
+
+<script type="text/javascript">
+var is_not_show_admin_banner_list = ["/moviedb/main", "/tv/main", "/person/main", "/filmfest/main", "/magazine/new"];
+var this_request_uri = "/premovie/released";
+
+
+
+$(document).ready(function() {
+	if($(window).width() >= limitWidthOfMobile) { // PC 크기에서만 로딩하기
+		var iframeHTML = '<iframe title="배너광고" src="//display.ad.daum.net/imp?slotid=03L13" width="250" height="250" border="0" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="AMS_WING_250exp" name="AMS_WING_250exp" allowtransparency="true"></iframe>';
+		$("#EXTENSIBLE_WING_WRAP").append(iframeHTML);
+	} else {
+		$("#EXTENSIBLE_WING_WRAP").append('<a href="https://story.kakao.com/ch/moviekakao"><img src="http://t1.daumcdn.net/movie/c90e7313496df0d7d4a5bf65d8d5289c9d964cd8" width="250" height="250"></a>');
+	}
+	
+	$.ajax({
+		url: "/api/snippet/banner?&"
+	}).done(function(data) {
+		var divBnr = $('#siBnrImage');
+		var today = new Date();
+		// GNB 영역의 사이드 배너 삽입
+		if(divBnr) {
+			var bnr = data.side, startAt = new Date(bnr.bnrStartAt), endAt = new Date(bnr.bnrEndAt);
+			if(today > startAt && today < endAt || today > startAt && !bnr.bnrEndAt) {
+				var a = document.createElement("a"), img = document.createElement("img");
+				a.appendChild(img);
+				a.className = 'link_gnbbnr #banner'; a.href = bnr.pcLanding;
+				img.className = 'thumb_bnr'; img.src = bnr.siBnrImage, img.alt = bnr.bnrImageAlt;
+				divBnr.append(a);
+			}
+		}
+		// 354 배너 페이지에 따라 노출 제어
+		if (is_not_show_admin_banner_list.indexOf(this_request_uri) < 0) {
+			divBnr = $('#pcBnrImage');
+			if(divBnr) {
+				bnr = data.common, startAt = new Date(bnr.bnrStartAt), endAt = new Date(bnr.bnrEndAt);
+				if(today > startAt && today < endAt || today > startAt && !bnr.bnrEndAt) {
+					// PC 배너
+					a = document.createElement("a"), img = document.createElement("img");
+					a.appendChild(img);
+					a.className = 'link_bnr bnr_354 #banner #pc'; a.href = bnr.pcLanding;
+					img.width = 250; img.height = 354; img.src = bnr.pcBnrImage; img.alt = bnr.bnrImageAlt
+					divBnr.append(a);
+					
+					// 모바일 하단 배너
+					if(location.pathname == '/main/new') {
+						a = document.createElement("a"), img = document.createElement("img");
+						a.appendChild(img);
+						a.className = 'link_bnr #banner #mobile'; a.style.background = bnr.moBnrBg, a.href = bnr.moLanding;
+						img.width = 320; img.className = 'img_bnr', img.src = bnr.moBnrImage; img.alt = bnr.bnrImageAlt
+						document.getElementById('mBottomBnr').appendChild(a);
+					}
+				}
+			}
+		} else {
+			$("#pcBnrImage").hide();
+		}
+	});
+});
+
+</script>					
+				</div>
+			</div>
+		</div>
+
+<script type="text/javascript" src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//lazyload/jquery.lazyload.js"></script>
+
+<script>
+
+	$(document).ready(function() {
+		
+		$("img.lazy").lazyload({
+			threshold: function(emt) {return $(emt).parent().innerHeight();}
+		});
+		
+		if("reservation" == "reservation") {
+			$("label.lab_check").find("span.ico_popcorn").addClass("ico_check");
+		}
+		
+		$("#checkReservation").click(function() {
+			movietools.tiara.send("premovie", "onlybooking");
+			
+			var isChecked = $("label.lab_check").find("span.ico_popcorn").hasClass("ico_check");
+			if(isChecked) {
+				goPage("total");
+			} else {
+				goPage("reservation");
+			}
+		});
+		
+	});
+	
+	function goPage(opt) {
+		location.href = "released?opt=" + opt;
+	}
+	
+</script>
+
+
+	</div>
+	<hr class="hide">
+	<div id="share_layer" class="movie_layer share_layer">
+    <div class = "inner_share_layer">
+        <div class="layer_head">
+            <strong class="screen_out">공유하기 레이어</strong>
+        </div>
+        <div class="layer_body">
+            <strong class="screen_out">sns 목록</strong>
+            <ul class="list_share">
+                <li>
+                    <a href="#none" id="shareKakaotalkBtn" class="link_share">
+                        <span class="ico_popcorn ico_kt"></span>카카오톡
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" id="shareKakaoStoryBtn" class="link_share">
+                        <span class="ico_popcorn ico_ks"></span>카카오스토리
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" id="shareFacebookBtn" class="link_share">
+                        <span class="ico_popcorn ico_fb"></span>페이스북
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" id="shareTwitterBtn" class="link_share">
+                        <span class="ico_popcorn ico_tw"></span>트위터
+                    </a>
+                </li>
+                <li>
+                    <a href="#none" id="shareMailBtn" class="link_share">
+                        <span class="ico_popcorn ico_mail"></span>메일
+                    </a>
+                </li>
+            </ul>
+            <div class="area_copy">
+                <label for="tfCopy" class="screen_out">링크 복사</label>
+                <input type="text" id="tfCopy" class="tf_copy" value=""/>
+                <span class="txt_url">URL을 전체선택 한 후 복사하세요</span>
+            </div>
+        </div>
+        <div class="layer_foot">
+            <button type="button" id="shareLayerCloseBtn" class="btn_close ico_popcorn">닫기</button>
+        </div>
+    </div>
+</div>
+<div id="dim_share" class="dimmed_share"></div><!-- 2016-02-18 클래스명 수정 -->	<div id="dkFoot" class="d_foot"  role="contentinfo" >
+		<div class="inner_foot">
+			<a href="/" class="link_logo">
+				<span class="logo_movie">DAUM</span>
+				영화
+			</a>
+			<small class="info_copyright">Copyright © <a href="http://kakaocorp.com/main/" target="_blank" class="link_kakao">Kakao Corp.</a> All rights reserved.</small>
+		</div>
+	</div>
+</div>
+
+<div class="bnr_top bnr_sponsor">
+	<div class="link_bnr" id="SponsorBarWrap">
+		<div class="bar"></div>
+		<div class="tooltip"></div>
+		<div class="minisite"></div>
+	</div>
+</div> <!-- 2016-03-07 임시 피씨 스폰서 배너 -->
+
+<div class="bnr_top bnr_adam">
+	<div id="daumAd"></div>
+</div> <!-- 2016-03-07 임시 모바일 아담 배너 -->
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+		var slotid = "";
+		var filler, da;
+		if($(window).width() < limitWidthOfMobile) {
+			slotid = "0Qb72";
+			da = $('#SponsorBarWrap');
+			filler = '<div class="bar"><a href="https://story.kakao.com/ch/moviekakao"> \
+			<img src="http://t1.daumcdn.net/movie/aa5ae7f69c33d34a98b83677981b0a3fcb8a54c5" width="978" height="60" alt="스폰서광고" style="position:absolute"></a></div>';
+			da.html(filler);
+			da.parent().css('background', '#eb5778');
+		} else {
+			slotid = "MIDAS-rhdapzvojof7";
+			da = $('#daumAd');
+			filler = '<a href="https://story.kakao.com/ch/moviekakao" class="link_bnr"> \
+			<img src="http://t1.daumcdn.net/movie/8374b340668cedaff68b8f2ec9c2524ec781489d" class="img_bnr" alt=""></a>';
+			da.html(filler);
+			da.parent().css('background', '#eb5778');
+		}
+		
+		new function(d, m, e, k, f) {
+	        var g, l, h, c;
+	        h = d.document;
+	        e = e || "utf-8";
+	        f = f || d;
+	        c = 0;
+	        g = function(b, a) {
+	            null != b.attachEvent ? b.attachEvent("onload", a) : b.addEventListener("load", a, !1)
+	        };
+	        l = function() {
+	            null != k && 2 > c && (c = 2, k.call(f))
+	        };
+	        g(d, function() {
+	            setTimeout(function() {
+	                var b, a;
+	                if (1 > c) return c = 1, b = h.getElementsByTagName("script")[0], a = h.createElement("script"), a.type = "text/javascript", a.async = !0, a.defer = !0, a.src = m, a.charset = e, g(a, l), b.parentNode.insertBefore(a, b)
+	            }, 0)
+	        })
+	    }(window, "http://display.ad.daum.net/imp?slotid=" + slotid, "euc-kr", null, null);
+	});
+	
+</script>
+
+
+<div id="notiPopupLayer" class="wrap_layer #notice" style="top:100px"></div>
+
+<script type="text/template" id="image-poplayer-tmpl">
+<div id="<%= id %>" class="movie_layer" style="margin-bottom:70px" data-layer-link="<%= encodeURIComponent(link) %>">
+	<div class="inner_notice_layer inner_notice_image">
+		<div class="layer_head">
+			<strong class="screen_out">공지사항 레이어</strong>
+		</div>
+		<div class="layer_body" tabindex="<%= tabIndex %>">
+			<a href="<%= link %>" class="link_detail #click">
+				<strong class="ir_pm"><%- text %></strong>
+				<img src="<%= image %>" class="img_notice" alt="<%- text %>">
+			</a>
+		</div>
+		<div class="layer_foot">
+			<span class="area_check"><!-- 체크시 'on'클래스 추가 -->
+				<input type="checkbox" id="hiddenCheck<%= id %>" class="inp_check">
+				<label for="hiddenCheck" class="lab_check" tabindex="<%= tabIndex + 1 %>">
+					<span class="ico_popcorn" data-layer-id="<%= id %>"></span>
+					1일간 보지 않기
+				</label>
+			</span>
+			<button type="button" class="btn_close ico_popcorn #close" data-layer-id="<%= id %>" tabindex="<%= tabIndex + 2 %>">닫기</button>
+		</div>
+	</div>
+</div>
+</script>
+
+<script type="text/template" id="text-poplayer-tmpl">
+<div id="<%= id %>" class="movie_layer" style="margin-bottom:70px" data-layer-link="<%= encodeURIComponent(link) %>"><!-- 임시 위치값  -->
+	<div class="inner_notice_layer">
+		<div class="layer_head">
+			<strong class="screen_out">공지사항 레이어</strong>
+		</div>
+		<div class="layer_body" tabindex="<%= tabIndex %>">
+			<p class="txt_infomovie"><%- text %><span class="txt_date"><%- txtDate %></span></p>
+			<a href="<%= link %>" class="link_notice #click">자세히 보기</a>
+		</div>
+		<div class="layer_foot">
+			<span class="area_check"><!-- 체크시 'on'클래스 추가 -->
+				<input type="checkbox" id="hiddenCheck" class="inp_check">
+				<label for="hiddenCheck" class="lab_check" tabindex="<%= tabIndex + 1 %>">
+					<span class="ico_popcorn" data-layer-id="<%= id %>"></span>
+					1일간 보지 않기
+				</label>
+			</span>
+			<button type="button" class="btn_close ico_popcorn #close" data-layer-id="<%= id %>" tabindex="<%= tabIndex + 2 %>">닫기</button>
+		</div>
+	</div>
+</div>
+</script>
+
+<div class="dimmed" style="display:none"></div>
+<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//cookie/jquery.cookie.js"></script>
+<script type="text/javascript">
+var MoviePopLayerController = {
+	queryVal : function(key) {
+		var val = location.search.split(key + "=") || [];
+		return val && val.length > 1 ? val[1].split("&")[0] : "";
+	},
+	isPopupTargetPage : function(targets) {
+		var pages = JSON.parse(targets), section, target;
+		for(var i = 0; i < pages.length; i++) {
+			section = pages[i].section;
+			target = pages[i].target;
+			if(section == 'home' && location.pathname == '/main/new') {
+				return true;
+			} else if(section == 'magazine' && location.pathname == '/magazine/new') {
+				return true;
+			} else if(section == 'movie' && location.pathname == '/moviedb/main' && target == MoviePopLayerController.queryVal('movieId')) {
+				return true;
+			} else if(section == 'tv' && location.pathname == '/tv/main' && target == MoviePopLayerController.queryVal('tvProgramId')) {
+				return true;
+			} else {
+				continue;
+			}
+		}
+		return false;
+	}
+}
+
+
+$.ajax({
+  url: "/api/snippet/layer?&"
+  //cache: false
+  
+}).done(function(result) {
+	var image_tmpl = _.template($('#image-poplayer-tmpl').html());
+	var text_tmpl = _.template($('#text-poplayer-tmpl').html());
+        
+	if(result.data) {
+		var pops = result.data;
+		if(pops && pops.length && pops.length > 0) {
+			var notiLayer = $('#notiPopupLayer');
+			for(var i = 0; i < pops.length; i++) {
+				pops[i].tabIndex = i * 3 + 1;
+				var pop = pops[i];
+				if(!pop.link) 
+					continue;
+				if($.cookie('popcorn_' + encodeURIComponent(pop.link))) { 
+					continue;
+				} else {
+					if(MoviePopLayerController.isPopupTargetPage(pop.popPages)) {
+						pop.id = 'popLayerId' + i;
+						var today = new Date(), startAt = new Date(pop.startAt), endAt = new Date(pop.endAt);
+						//if(today > endAt || today < startAt) continue;
+						//if(today > startAt && today < endAt || today > startAt && !pop.endAt) {
+						if(today > startAt && today < endAt) { 
+							if(pop.image && pop.image != '') 
+								notiLayer.append(image_tmpl(pops[i]));
+							else if(pop.text && pop.text != '') 
+								notiLayer.append(text_tmpl(pops[i]));
+							else
+								;
+						}
+					}
+				}
+			}
+			if(notiLayer.children().length > 0) {
+				$('.dimmed').css('display', 'block');
+				if(location.href.indexOf('#dkWrap') < 0) location.href = location.href + '#dkWrap';
+				else location.href = location.href;
+			}
+			/* 마크업 변경 가능성 있음으로 주석 처리
+			notiLayer.find('.btn_close').on('click', function(ev) {
+				$('#'+ev.target.getAttribute('data-layer-id')).remove();
+				if(notiLayer.children().length < 1) 
+					$('.dimmed').css('display', 'none');
+			});
+			*/
+			notiLayer.find('.btn_close.ico_popcorn').on('click', function(ev) {
+				$('#'+ev.target.getAttribute('data-layer-id')).remove();
+				if(notiLayer.children().length < 1) 
+					$('.dimmed').css('display', 'none');
+				//movietools.tiara.send('movie', 'home layer img', {cno: '1-1', img:'http://img1.daumcdn.net/thumb/C186x268/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fmovie%2F697db6e5c1a3fa165d807c381498c80fcca0ab66'});
+				//movietools.tiara.sendEventLog(['button', 'newsbox', 'prev_next', 'prev']);
+				
+			});
+			notiLayer.find('.lab_check').on('click', function(ev) {
+				var $pop = $('#'+ev.target.getAttribute('data-layer-id'));
+				$pop.remove();
+				if(notiLayer.children().length < 1) 
+					$('.dimmed').css('display', 'none');
+				$.cookie('popcorn_' + $pop.attr('data-layer-link'), true, { expires: 1, path: '/', domain: 'movie.daum.net' });
+			});
+			
+		}
+	}
+});
+</script>
+
+
+
+<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//rx.all.compat.js"></script>
+
+<script type="text/javascript">
+    var deviceMode = 'unknown';
+</script>
+<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//footer/scroll_common.js"></script>
+	<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//footer/search_common_for_footer.js"></script>
+	<script src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//common/socialshare_common.js"></script>
+<script type="text/javascript">
+var MOVIE_FOOT_VIEWABLE = {
+	sendFootViewEventLog: function() {
+		if($('#dkFoot').visible(true, false, 'vertical')) {
+			var paths = location.pathname.split('/');
+	    	_tiq.push(['__trackEvent', 'foot', paths[1], paths[2]]);
+	    	$(window).unbind('scroll', MOVIE_FOOT_VIEWABLE.sendFootViewEventLog);
+	    }
+    }
+}
+$(window).bind('scroll', MOVIE_FOOT_VIEWABLE.sendFootViewEventLog);
+
+	$(document).ready(function() {
+		SCROLL_COMMON.readyScroll();
+		            $(".link_search").bind("click", function() {
+				var browser = window.ua_result.browser;
+				if (browser.name == 'msie' && browser.version.major <= 8) {
+                    alert('IE11에 최적화 되어있으며, IE8 이하 버전에서는 일부 기능이 제한될 수 있습니다.');
+				} else {
+                    onClickSearch();
+				}
+			});
+			$("#search_close_btn").bind("click", function() {
+				if ($("#dkHead").hasClass("search_on")) {
+					$("#dkHead").removeClass("search_on")
+				}
+				if ($("#dkHead").hasClass("sgt_on")) {
+					$("#dkHead").removeClass("sgt_on")
+				}
+				$("#dkWrap").css("height", "auto");
+				$("#search_keyword_text_field").val("");
+				jQuery(window).off('resize', setTimeoutFixedHeight);
+				SCROLL_COMMON.applyScrollCommon();
+			});
+				readySearchForFooter();
+
+		var snsImgUrl = null;
+		var snsContentTitle = null;
+		var snsButtonText = null;
+									snsButtonText = '현재 상영 영화';
+		        var socialShareHelper = new SocialShareHelper(window.ua_result, snsImgUrl, snsContentTitle, snsButtonText);
+		socialShareHelper.setSocialLayerPosition();
+        jQuery(window).on('resize', socialShareHelper.setSocialLayerPosition);
+		socialShareHelper.bindEvents();
+	});
+	    	$("#search_layer form input[name='returnUrl']").val(location.href);
+	
+	</script>
+<script async src="http://s1.daumcdn.net/svc/attach/U0301/cssjs/movie/20835//common/tiara.js" charset="utf-8" type="text/javascript"></script>
+</body>
+</html>
