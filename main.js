@@ -1,3 +1,5 @@
+ObjC.import('stdlib');
+
 var app = Application.currentApplication();
 app.includeStandardAdditions = true;
 
@@ -33,8 +35,7 @@ function makeArr(html) {
 function fetchImage(src) {
     var filename = ''+src.match(/[\w]*$/);
     filename &&
-        (app.doShellScript('test -e '+tmpdir+filename+' && echo "true" || echo "false"') === 'false') &&
-        app.doShellScript('curl '+src+' >> '+tmpdir + filename);
+        $.system('(if [ ! -f '+tmpdir+filename+' ]; then curl '+src+' >> '+tmpdir+filename+'; fi)&');
     return tmpdir + filename;
 }
 
